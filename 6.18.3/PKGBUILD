@@ -297,12 +297,19 @@ source=(
 "https://raw.githubusercontent.com/cachyos/kernel-patches/master/6.18/all/0001-cachyos-base-all.patch"
 "https://raw.githubusercontent.com/cachyos/kernel-patches/master/6.18/misc/dkms-clang.patch")
 
+_make() {
+  test -s version
+  make KERNELRELEASE="$(<version)" "$@"
+}
+
 prepare() {
     cd "$_srcname"
 
     echo "Setting version..."
     echo "-$pkgrel" > localversion.10-pkgrel
     echo "${pkgbase#linux}" > localversion.20-pkgname
+    make defconfig
+    make mrproper
 
     local src
     for src in "${source[@]}"; do
@@ -317,9 +324,9 @@ prepare() {
     done
 
     echo "Setting config..."
+    cp ../config .config
     ./scripts/kconfig/merge_config.sh -m ../config ../surface.config
     _make olddefconfig
-    cp ../config .config
 
     ### Select CPU optimization
     if [ -n "$_processor_opt" ]; then
