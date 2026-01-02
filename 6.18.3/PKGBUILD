@@ -294,13 +294,25 @@ _die() { error "$@" ; exit 1; }
 source=(
 "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.3.tar.xz"
 "config"
+"surface.config"
 "https://raw.githubusercontent.com/cachyos/kernel-patches/master/6.18/all/0001-cachyos-base-all.patch"
-"https://raw.githubusercontent.com/cachyos/kernel-patches/master/6.18/misc/dkms-clang.patch")
-
-_make() {
-  test -s version
-  make KERNELRELEASE="$(<version)" "$@"
-}
+"https://raw.githubusercontent.com/cachyos/kernel-patches/master/6.18/misc/dkms-clang.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0001-secureboot.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0002-surface3.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0003-mwifiex.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0004-ath10k.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0005-ipts.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0006-ithc.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0007-surface-sam.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0008-surface-sam-over-hid.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0009-surface-button.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0010-surface-typecover.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0011-surface-shutdown.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0012-surface-gpe.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0013-cameras.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0014-amd-gpio.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0015-rtc.patch"
+"https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/0016-hid-surface.patch")
 
 prepare() {
     cd "$_srcname"
@@ -324,9 +336,8 @@ prepare() {
     done
 
     echo "Setting config..."
-    cp ../config .config
     ./scripts/kconfig/merge_config.sh -m ../config ../surface.config
-    _make olddefconfig
+    cp ../config .config
 
     ### Select CPU optimization
     if [ -n "$_processor_opt" ]; then
