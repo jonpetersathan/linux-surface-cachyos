@@ -1,8 +1,8 @@
-pkgbase = linux-cachyos
+pkgbase = linux-surface-cachyos
 	pkgdesc = Linux EEVDF + LTO + AutoFDO + Propeller Cachy Sauce Kernel by CachyOS with other patches and improvements.
 	pkgver = 6.18.3
 	pkgrel = 1
-	url = https://github.com/CachyOS/linux-cachyos
+	url = https://github.com/jonpetersathan/linux-surface-cachyos
 	arch = x86_64
 	license = GPL-2.0-only
 	makedepends = bc
@@ -28,12 +28,28 @@ pkgbase = linux-cachyos
 	source = config
 	source = https://raw.githubusercontent.com/cachyos/kernel-patches/master/6.18/all/0001-cachyos-base-all.patch
 	source = https://raw.githubusercontent.com/cachyos/kernel-patches/master/6.18/misc/dkms-clang.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0001-secureboot.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0002-surface3.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0003-mwifiex.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0004-ath10k.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0005-ipts.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0006-ithc.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0007-surface-sam.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0008-surface-sam-over-hid.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0009-surface-button.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0010-surface-typecover.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0011-surface-shutdown.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0012-surface-gpe.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0013-cameras.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0014-amd-gpio.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0015-rtc.patch
+	source = https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/6.18/0016-hid-surface.patch
 	b2sums = 273e7b7161765022c7345d00a57ab865ac443422327157522b8a2960ead39b0fbac17b7a8b27d09800d06e08c3ce04e3bc08433863aedc3a8ec1e7a51e6d9d4a
 	b2sums = 81fafd3adcaf3b690d8d4791693e68c7ae921d103ebfd70e8d0ae15cd05ecde5e6672ae43c3a7875686d883c1f5b82d2c8b37b40aee8dcb0563913f9dd6469b6
 	b2sums = 6db2adb3269c348bde0f495a0c3d69117481bdef6a01d427eeef9e3d5f36698baa3147a495014c904d610b9853b11ba882ac6f68ba0d27da7a4810baf0542379
 	b2sums = c7294a689f70b2a44b0c4e9f00c61dbd59dd7063ecbe18655c4e7f12e21ed7c5bb4f5169f5aa8623b1c59de7b2667facb024913ecb9f4c650dabce4e8a7e5452
 
-pkgname = linux-cachyos
+pkgname = linux-surface-cachyos
 	pkgdesc = The Linux EEVDF + LTO + AutoFDO + Propeller Cachy Sauce Kernel by CachyOS with other patches and improvements. kernel and modules
 	depends = coreutils
 	depends = kmod
@@ -49,15 +65,15 @@ pkgname = linux-cachyos
 	provides = NTSYNC-MODULE
 	provides = VHBA-MODULE
 	provides = ADIOS-MODULE
-	provides = linux-cachyos-lto=6.18.3-1
-	replaces = linux-cachyos-lto
+	provides = linux-surface-cachyos-lto=6.18.3-1
+	replaces = linux-surface-cachyos-lto
 
-pkgname = linux-cachyos-headers
+pkgname = linux-surface-cachyos-headers
 	pkgdesc = Headers and scripts for building modules for the Linux EEVDF + LTO + AutoFDO + Propeller Cachy Sauce Kernel by CachyOS with other patches and improvements. kernel
 	depends = pahole
-	depends = linux-cachyos
+	depends = linux-surface-cachyos
 	depends = clang
 	depends = llvm
 	depends = lld
-	provides = linux-cachyos-lto-headers=6.18.3-1
-	replaces = linux-cachyos-lto-headers
+	provides = linux-surface-cachyos-lto-headers=6.18.3-1
+	replaces = linux-surface-cachyos-lto-headers

@@ -202,13 +202,32 @@ makedepends=(
 )
 
 _patchsource="https://raw.githubusercontent.com/cachyos/kernel-patches/master/${_major}"
+_surfacepatchsource="https://raw.githubusercontent.com/linux-surface/linux-surface/refs/heads/master/patches/${_major}"
 _nv_ver=590.48.01
 _nv_pkg="NVIDIA-Linux-x86_64-${_nv_ver}"
 _nv_open_pkg="NVIDIA-kernel-module-source-${_nv_ver}"
 source=(
     "https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.xz"
     "config"
-    "${_patchsource}/all/0001-cachyos-base-all.patch")
+    "surface.config"
+    "${_patchsource}/all/0001-cachyos-base-all.patch"
+    "${_surfacepatchsource}/0001-secureboot.patch"
+    "${_surfacepatchsource}/0002-surface3.patch"
+    "${_surfacepatchsource}/0003-mwifiex.patch"
+    "${_surfacepatchsource}/0004-ath10k.patch"
+    "${_surfacepatchsource}/0005-ipts.patch"
+    "${_surfacepatchsource}/0006-ithc.patch"
+    "${_surfacepatchsource}/0007-surface-sam.patch"
+    "${_surfacepatchsource}/0008-surface-sam-over-hid.patch"
+    "${_surfacepatchsource}/0009-surface-button.patch"
+    "${_surfacepatchsource}/0010-surface-typecover.patch"
+    "${_surfacepatchsource}/0011-surface-shutdown.patch"
+    "${_surfacepatchsource}/0012-surface-gpe.patch"
+    "${_surfacepatchsource}/0013-cameras.patch"
+    "${_surfacepatchsource}/0014-amd-gpio.patch"
+    "${_surfacepatchsource}/0015-rtc.patch"
+    "${_surfacepatchsource}/0016-hid-surface.patch"
+    )
 
 # LLVM makedepends
 if _is_lto_kernel; then
@@ -298,6 +317,8 @@ prepare() {
     done
 
     echo "Setting config..."
+    ./scripts/kconfig/merge_config.sh -m ../config ../surface.config
+    _make olddefconfig
     cp ../config .config
 
     ### Select CPU optimization
