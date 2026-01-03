@@ -22,7 +22,7 @@ makepkg -si --skipinteg
 You can also just install the prebuilt kernel by downloading the kernel and header files from [here](https://github.com/jonpetersathan/linux-cachyos-surface/releases) and run:
 
 ```bash
-sudo pacman -U linux-cachyos-*.pkg.tar.zst linux-cachyos-headers-*.pkg.tar.zst
+sudo pacman -U linux-cachyos-surface-*.pkg.tar.zst
 ```
 
 ## Acknowledgements
