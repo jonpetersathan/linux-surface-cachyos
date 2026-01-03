@@ -320,8 +320,6 @@ prepare() {
     echo "Setting version..."
     echo "-$pkgrel" > localversion.10-pkgrel
     echo "${pkgbase#linux}" > localversion.20-pkgname
-    make defconfig
-    make mrproper
 
     local src
     for src in "${source[@]}"; do
@@ -337,7 +335,6 @@ prepare() {
 
     echo "Setting config..."
     ./scripts/kconfig/merge_config.sh -m ../config ../surface.config
-    cp ../config .config
 
     ### Select CPU optimization
     if [ -n "$_processor_opt" ]; then
