@@ -1,0 +1,31 @@
+# CachyOS Kernel for Surface Devices
+
+This repository includes the files needed to build an optimized CachyOS kernel including custom patches for Microsoft Surface devices. The patches are based on the work from the linux-surface repository. The patches have been updated to ensure compatibility with CachyOS's patches.
+
+The updated linux-surface patches used for this kernel can be found here: [jonpetersathan/linux-surface](https://github.com/jonpetersathan/linux-surface)
+
+## Installation Instructions
+
+### Build from source
+
+To install the kernel and header files from source, run the following commands within CachyOS (or any Arch derivative):
+
+```bash
+sudo pacman -S base-devel
+git clone https://github.com/jonpetersathan/linux-surface-cachyos
+cd linux-surface-cachyos/VERSION
+makepkg -si --skipinteg
+```
+
+### Install prebuilt packages
+
+You can also just install the prebuilt kernel by downloading the kernel and header files from [here](https://github.com/jonpetersathan/linux-surface-cachyos/releases) and run:
+
+```bash
+sudo pacman -U linux-cachyos-*.pkg.tar.zst linux-cachyos-headers-*.pkg.tar.zst
+```
+
+## Acknowledgements
+
+- Maximilian Luz: [surface-linux/surface-linux](https://github.com/linux-surface/linux-surface)
+- Peter Lung: [CachyOS/linux-cachyos](https://github.com/CachyOS/linux-cachyos)
