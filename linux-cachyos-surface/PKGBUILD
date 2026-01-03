@@ -209,7 +209,7 @@ _nv_open_pkg="NVIDIA-kernel-module-source-${_nv_ver}"
 source=(
     "https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.xz"
     "config"
-    "surface.config"
+    "https://raw.githubusercontent.com/jonpetersathan/linux-surface/refs/heads/master/configs/surface-${_major}.config"
     "${_patchsource}/all/0001-cachyos-base-all.patch"
     "${_surfacepatchsource}/0001-secureboot.patch"
     "${_surfacepatchsource}/0002-surface3.patch"
@@ -294,7 +294,7 @@ _die() { error "$@" ; exit 1; }
 source=(
 "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.3.tar.xz"
 "config"
-"surface.config"
+"https://raw.githubusercontent.com/jonpetersathan/linux-surface/refs/heads/master/configs/surface-${_major}.config"
 "https://raw.githubusercontent.com/cachyos/kernel-patches/master/6.18/all/0001-cachyos-base-all.patch"
 "https://raw.githubusercontent.com/cachyos/kernel-patches/master/6.18/misc/dkms-clang.patch"
 "https://raw.githubusercontent.com/jonpetersathan/linux-surface/refs/heads/master/patches/6.18/0001-secureboot.patch"
