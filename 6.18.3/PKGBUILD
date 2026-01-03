@@ -158,7 +158,7 @@ _is_ci_build() {
 
 if _is_lto_kernel && [ "$_use_lto_suffix" = "yes"  ]; then
     _pkgsuffix=cachyos-surface-lto
-elif ! _is_lto_& [ "$_use_gcc_suffix" = "yes" ]; then
+elif ! _is_lto_kernel && [ "$_use_gcc_suffix" = "yes" ]; then
     _pkgsuffix=cachyos-surface-gcc
 else
     _pkgsuffix=cachyos-surface
