@@ -102,11 +102,15 @@ diff --git a/drivers/hid/Makefile b/drivers/hid/Makefile
 index b73a1bbd3a1d..3190ece25626 100644
 --- a/drivers/hid/Makefile
 +++ b/drivers/hid/Makefile
-@@ -178,3 +178,4 @@ obj-$(CONFIG_SURFACE_HID_CORE)  += surface-hid/
- obj-$(CONFIG_INTEL_THC_HID)     += intel-thc-hid/
- 
+@@ -180,6 +180,8 @@ obj-$(CONFIG_INTEL_THC_HID)     += intel
+
  obj-$(CONFIG_HID_IPTS)          += ipts/
+
 +obj-$(CONFIG_HID_ITHC)          += ithc/
++
+ obj-$(CONFIG_SPI_HID_APPLE_CORE)	+= spi-hid/
+
+ obj-$(CONFIG_HID_DOCKCHANNEL)   += dockchannel-hid/
 diff --git a/drivers/hid/ithc/Kbuild b/drivers/hid/ithc/Kbuild
 new file mode 100644
 index 000000000000..4937ba131297
