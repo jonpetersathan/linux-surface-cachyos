@@ -20,7 +20,7 @@ makepkg -si --skipinteg
 Or alternatively using docker:
 
 ```bash
-time docker run --name kernelbuild -v $PWD:/pkg pttrr/docker-makepkg-v3
+docker run --name kernelbuild -v $PWD:/pkg cachyos/docker-makepkg-v3
 sudo pacman -U linux-cachyos-surface-*.pkg.tar.zst
 ```
 
