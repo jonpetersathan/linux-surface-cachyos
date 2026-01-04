@@ -16,7 +16,7 @@ for f in $files
 do
     d=$(dirname $f)
     cd $d
-    time podman run --name kernelbuild -e EXPORT_PKG=1 -e SYNC_DATABASE=1 -e CHECKSUMS=1 -v $PWD:/pkg docker.io/jonpetersathan/docker-makepkg-v3
+    time podman run --name kernelbuild -e EXPORT_PKG=1 -e SYNC_DATABASE=1 -e CHECKSUMS=1 -v $PWD:/pkg docker.io/tenasi/docker-makepkg-v3
     podman rm kernelbuild
     cd ..
 done
