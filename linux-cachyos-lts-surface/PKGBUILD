@@ -190,7 +190,7 @@ source=(
     "auto-cpu-optimization.sh"
     "${_patchsource}/all/0001-cachyos-base-all.patch"
     "${_surfacepatchsource}/0001-secureboot.patch"
-    "${_surfacepatchsource}/0002-surface3.patch"
+    "${_surfacepatchsource}/0002-surface3-oemb.patch"
     "${_surfacepatchsource}/0003-mwifiex.patch"
     "${_surfacepatchsource}/0004-ath10k.patch"
     "${_surfacepatchsource}/0005-ipts.patch"
