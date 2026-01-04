@@ -272,7 +272,7 @@ prepare() {
     done
 
     echo "Setting config..."
-    ./scripts/kconfig/merge_config.sh -m ../config ../surface.config
+    ./scripts/kconfig/merge_config.sh -m ../config ../surface-${_major}.config
 
     ### Select CPU optimization
     if [ -n "$_processor_opt" ]; then
