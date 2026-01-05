@@ -101,7 +101,7 @@
 # yes - enable -lto suffix
 # no - disable -lto suffix
 # https://github.com/CachyOS/linux-cachyos/issues/36
-: "${_use_lto_suffix:=yes}"
+: "${_use_lto_suffix:=no}"
 
 # Use suffix -gcc when requested by the user
 # This was added to facilitate https://github.com/CachyOS/linux-cachyos/issues/286
@@ -139,11 +139,11 @@ _is_ci_build() {
 }
 
 if _is_lto_kernel && [ "$_use_lto_suffix" = "yes"  ]; then
-    _pkgsuffix="cachyos-lts-surface-lto"
+    _pkgsuffix="cachyos-surface-lts-lto"
 elif ! _is_lto_kernel && [ "$_use_gcc_suffix" = "yes" ]; then
-    _pkgsuffix="cachyos-lts-surface-gcc"
+    _pkgsuffix="cachyos-surface-lts-gcc"
 else
-    _pkgsuffix="cachyos-lts-surface"
+    _pkgsuffix="cachyos-surface-lts"
 fi
 
 pkgbase="linux-$_pkgsuffix"

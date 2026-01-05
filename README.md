@@ -12,7 +12,7 @@ The updated linux-surface patches used for this kernel can be found here: [jonpe
 
 This variant is as close to the original cachyos kernel as possible, it is build using Clang LTO mode `full` with llvm for maximum performance.
 
-### linux-cachyos-lts-surface
+### linux-cachyos-surface-lts
 
 This variant is based on the original cachyos lts kernel, but is build with gcc for better stability and support.
 

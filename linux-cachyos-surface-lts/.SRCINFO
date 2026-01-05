@@ -44,7 +44,7 @@ pkgbase = linux-cachyos-surface-lts
 	b2sums = 14d0cc9c68af30adbd159af81227ab93b25bc654b8720e054782d092d9ffcadf30f57b54ba1b2b198b6cd0e6f985ead279a2f7398ca959b1f0620f5f66222c83
 	b2sums = 05a83239cada205fe45a9550eabf19c566786e84152761d37e96f433cd764f917f5cd95bbbac181e1444251363260bf92ca4c078729faaba464a1d535d77d3fd
 
-pkgname = linux-cachyos-lts-surface
+pkgname = linux-cachyos-surface-lts
 	pkgdesc = The Linux BORE + Cachy Sauce Kernel by CachyOS with other patches and improvements - Long Term Service kernel and modules
 	depends = coreutils
 	depends = kmod
@@ -61,7 +61,7 @@ pkgname = linux-cachyos-lts-surface
 	provides = VHBA-MODULE
 	provides = ADIOS-MODULE
 
-pkgname = linux-cachyos-lts-surface-headers
+pkgname = linux-cachyos-surface-lts-headers
 	pkgdesc = Headers and scripts for building modules for the Linux BORE + Cachy Sauce Kernel by CachyOS with other patches and improvements - Long Term Service kernel
 	depends = pahole
-	depends = linux-cachyos-lts-surface
+	depends = linux-cachyos-surface-lts
