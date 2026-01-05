@@ -36,7 +36,7 @@ docker run --name kernelbuild -v $PWD:/pkg cachyos/docker-makepkg-v3
 sudo pacman -U linux-cachyos-surface-*.pkg.tar.zst
 ```
 
-**NOTE:** Per default the linux-cachyos-surface kernel is configured in LTO mode `full`, this takes a very long time to compile, since it's essentially disabeling multithreading. This can be changed by updating the following line in the PKGBUILD:
+**NOTE:** Per default the linux-cachyos-surface kernel is configured in LTO mode `full`, this may take a bit longer to compile and requires more ram. It can be changed by updating the following line in the PKGBUILD:
 ```bash
 # Clang LTO mode, only available with the "llvm" compiler - options are "none", "full" or "thin".
 # ATTENTION - one of three predefined values should be selected!
