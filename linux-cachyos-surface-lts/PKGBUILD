@@ -179,14 +179,14 @@ makedepends=(
 )
 
 _patchsource="https://raw.githubusercontent.com/cachyos/kernel-patches/master/${_major}"
-_surfacepatchsource="https://raw.githubusercontent.com/jonpetersathan/linux-surface/refs/heads/master/patches/${_major}"
+_surfacepatchsource="https://raw.githubusercontent.com/jonpetersathan/linux-cachyos-surface-patches/refs/heads/master/patches/${_major}"
 _nv_ver=590.48.01
 _nv_pkg="NVIDIA-Linux-x86_64-${_nv_ver}"
 _nv_open_pkg="NVIDIA-kernel-module-source-${_nv_ver}"
 source=(
     "https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.xz"
     "config"
-    "https://raw.githubusercontent.com/jonpetersathan/linux-surface/refs/heads/master/configs/surface-${_major}.config"
+    "https://raw.githubusercontent.com/jonpetersathan/linux-cachyos-surface-patches/refs/heads/master/configs/surface-${_major}.config"
     "auto-cpu-optimization.sh"
     "${_patchsource}/all/0001-cachyos-base-all.patch"
     "${_surfacepatchsource}/0001-secureboot.patch"

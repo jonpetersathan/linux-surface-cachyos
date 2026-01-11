@@ -2,7 +2,7 @@
 
 This repository includes the files needed to build an optimized CachyOS kernel including custom patches for Microsoft Surface devices. The patches are based on the work from the linux-surface repository. The patches have been updated to ensure compatibility with CachyOS's patches.
 
-The updated linux-surface patches used for this kernel can be found here: [jonpetersathan/linux-surface](https://github.com/jonpetersathan/linux-surface)
+The updated linux-surface patches used for this kernel can be found here: [jonpetersathan/linux-cachyos-surface-patches](https://github.com/jonpetersathan/linux-cachyos-surface-patches)
 
 _**NOTE:** The configuration files and prebuilt kernels are optimized for X86_64_v3 instruction sets, this should be fine for most Surface devices, but might not work on very old (1st or 2nd gen) devices._
 
